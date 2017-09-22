@@ -1,21 +1,6 @@
-package main
+package sorters
 
-import (
-	"fmt"
-)
-
-func isSorted(items []int) bool {
-	return items[1] > items[0]
-}
-
-func allSorted(items []int) bool {
-	for item := range items {
-		if item < len(items)-1 && !isSorted(items[item:item+2]) {
-			return false
-		}
-	}
-	return true
-}
+type BubbleSort struct { }
 
 func bubbleSort(arr []int) []int {
 	items := 2
@@ -34,9 +19,6 @@ func bubbleSort(arr []int) []int {
 	return arr
 }
 
-func main() {
-	arr := []int{3, 2, 9, 5}
-	fmt.Println(arr)
-	sorted := bubbleSort(arr)
-	fmt.Printf("result %v\n", sorted)
+func (b BubbleSort) Sort(arr []int) []int {
+  return bubbleSort(arr)
 }
